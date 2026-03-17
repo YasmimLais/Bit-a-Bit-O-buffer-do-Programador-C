@@ -1,0 +1,97 @@
+#include <stdio.h>
+
+int main(){
+
+    int QntEntradas, Passos, Colunas, Linhas, Posicão, PassosDireita, BufferB ;
+    char Sentido, PosicaoAnterior;
+    int baixo = 0, esquerda = 0, direita = 0;
+
+    scanf ("%d ", &QntEntradas);
+
+    // LAÇO PRINCIPAL: vai indicar quantas ações devos exercutar
+    for (int i = 1; i <= QntEntradas; i++ ){
+
+        scanf("%d %c", &Passos, &Sentido); // Recebe Passos e Sentidos
+
+        // SENTIDOS:
+
+        // Sentido para Baixo: 
+        if (Sentido == 'B'){
+            
+            if (i ==  QntEntradas){ 
+                Passos += 1;
+            }
+
+             // Um for para vê os passos para baixo = "." e outro para verificar a Posição:
+            for (int b = 1; b <= Passos ; b++){
+                printf("\n");
+                for (int c = 1; i <= Posicao; i++) {
+                    printf(" ");
+                }
+                printf(".");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+            }
+        }
+
+        // Sentido para Direita:
+        if (Sentido == 'D'){
+            for (int d = 1; d <= Passos; d++){
+                printf(".");
+            }
+
+            PassosDireita += Passos;
+            Posicao += PassosDireita; 
+            
+        }
+
+        // Sentido para Esquerda:
+        if (Sentido == 'E'){
+           
+            if (Passos == PassosDireta){
+            
+            } 
+           
+            if ((Passos < PassosDireita)) && baixo == 1){
+                printf("\n");
+                printf()
+                
+            }
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            for (int e = 1; )
+        
+        
+        }
+
+
+
+        
+
+
+    }
+
+    return 0
+}
