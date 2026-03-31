@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+int main() {
+    int altura, largura;
+
+    scanf("%d %d", &altura, &largura);
+
+    char parede[altura][largura];
+
+    for (int i = 0; i < altura; i++) {
+        for (int j = 0; j < largura; j++) {
+            scanf(" %c", &parede[i][j]);
+        }
+    }
+
+    
+    for (int i = 0; i < altura - 1; i++) { // Vai percorrer de cima para baixo
+        for (int j = 0; j < largura; j++) {
+            
+            if (parede[i][j] == 'o') {
+                
+                // Se em baixo for != de #, a gota cai
+                if (parede[i + 1][j] == '.') {
+                    parede[i + 1][j] = 'o';
+                } 
+                
+                // Se for pratileira vai transborda
+                else if (parede[i + 1][j] == '#') {
+                    
+                    // transbordado pra esquerda da prateleira
+                    int esq = j;
+                    while (esq >= 0 && parede[i + 1][esq] == '#') {
+                        parede[i][esq] = 'o'; // casa da cima 
+                        esq--;
+                    }
+                    // Se n�o saiu da parede, a gota cai na ponta esquerda
+                    if (esq >= 0) {
+                        parede[i][esq] = 'o'; // in�cio da queda da proxima queda 
+                    }
+
+                    // Vai transbodando pra direita 
+                    int dir = j;
+                    while (dir < largura && parede[i + 1][dir] == '#') {
+                        parede[i][dir] = 'o'; // linha de cima
+                        dir++;
+                    }
+                    // A gota cai na ponta direita
+                    if (dir < largura) {
+                        parede[i][dir] = 'o'; //  in�cio da queda da proxima queda 
+                }
+            }
+        }
+    }
+
+    // Resultado 
+    for (int i = 0; i < altura; i++) {
+        for (int j = 0; j < largura; j++) {
+            printf("%c", parede[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
