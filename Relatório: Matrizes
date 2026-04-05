@@ -1,0 +1,36 @@
+# Relatório Semanal de Aprendizado: Arrays Bidimensionais (Matrizes)
+
+## Resumo da Semana
+A semana foi dedicada ao estudo e manipulação de matrizes na linguagem C. O foco prático girou em torno de ler dados bidimensionais, navegar iterativamente por linhas e colunas, mapear vizinhanças (diretas e diagonais) e rastrear eventos dentro de um espaço delimitado por coordenadas (X, Y).
+
+---
+
+## Detalhamento das Questões
+
+### 1. Marquinho e a Goteira
+Esta questão serviu como uma introdução à simulação de "física" dentro de uma matriz.
+
+* **O que aprendi:**
+    * Leitura e preenchimento de matrizes utilizando loops aninhados (`for` dentro de `for`).
+    * Lógica de navegação vertical e horizontal (percorrendo de cima para baixo).
+    * Verificação de condições baseadas na posição de objetos específicos (água `.`, prateleira `#` e gota `o`).
+* **Principal Dificuldade:** A lógica de "transbordamento". Fazer a gota escorrer horizontalmente ao encontrar um obstáculo e cair pelas pontas exige controlar laços `while` dentro de um laço `for` principal, além de salvar os índices de parada.
+
+### 2. Enfeite da Praça
+Uma questão de mapeamento espacial que exigiu lógica sólida e objetiva.
+
+* **O que aprendi:**
+    * **Mapeamento profundo:** Identificar um ponto de interesse (`P`) e irradiar mudanças ao redor dele.
+    * **Tratamento de Limites (Boundary Checking):** Aprendizado prático sobre como proteger o código contra acessos a memórias inválidas. O uso de condicionais como `i - 1 >= 0` e `j + 1 < colunas` garante que o programa não tente acessar posições fora da matriz.
+    * **Diferenciação de Vizinhança:** Lógica para separar vizinhos diretos (formato de cruz) para receberem `+` e vizinhos diagonais para receberem `x`.
+
+### 3. Investimento (Movimentação)
+Desafio de paciência devido ao enunciado confuso. Interpretar requisitos mal escritos faz parte do dia a dia, e aqui a lógica de implementação foi o foco principal.
+
+* **O que aprendi:**
+    * **Mapas de Calor/Frequência:** Uso da matriz de inteiros para contar estados em vez de apenas armazenar caracteres. A inicialização com `{0}` e o incremento `matriz[y][x]++` criou um histórico de visitas eficiente.
+    * **Controle de Coordenadas:** Manipulação da matriz via variáveis `x` (coluna) e `y` (linha), usando `switch case` para comandos de direção (`c`, `b`, `e`, `d`).
+    * **Busca de Máximos:** Iteração total na matriz para encontrar a coordenada mais frequentada através da variável `maxVisitas`.
+
+---
+*Nota: Foi feito o uso de IA para a formatação deste relatório.*
